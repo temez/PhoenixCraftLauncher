@@ -2,7 +2,6 @@ package me.temez.phoenixcraft.login;
 
 import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
-import me.temez.phoenixcraft.menu.MainFrame;
 
 import javax.swing.*;
 

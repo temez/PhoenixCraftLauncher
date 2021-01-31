@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginPanel extends JPanel implements SwingerEventListener {
-    private  LoginFrame loginFrame = LoginFrame.getInstance();
+    private LoginFrame loginFrame = LoginFrame.getInstance();
 
     Image back = Swinger.getResource("login_assets/back.png");
 
@@ -23,7 +23,7 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
     private LoginField loginField = new LoginField(89, 259, 281, 66, null, null);
     private PassField passField = new PassField(89, 335, 281, 66, null, null);
 
-    private CheckBox logged = new CheckBox(90, 550, 28,28, "", true);
+    private CheckBox logged = new CheckBox(90, 550, 28, 28, "", true);
 
     public LoginPanel() {
         setLayout(null);
@@ -55,13 +55,11 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
 
     @Override
     public void onEvent(SwingerEvent event) {
-        if(event.getSource() == minimize){
+        if (event.getSource() == minimize) {
             loginFrame.setState(Frame.ICONIFIED);
-        }
-        if(event.getSource() == close){
+        } else if (event.getSource() == close) {
             loginFrame.dispose();
-        }
-        if(event.getSource() == login){
+        } else if (event.getSource() == login) {
             System.out.println(loginField.getText());
             System.out.println(passField.getText());
             System.out.println(logged.isSelected());

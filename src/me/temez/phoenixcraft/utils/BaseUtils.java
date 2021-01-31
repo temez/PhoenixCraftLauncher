@@ -41,7 +41,7 @@ public class BaseUtils {
         return fiDir;
     }
 
-    public static Font getFont(float size, int type){
+    public static Font getFont(float size, int type) {
         try {
             switch (type) {
                 case 1:
