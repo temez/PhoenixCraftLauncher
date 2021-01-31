@@ -10,8 +10,8 @@ public class Main {
         Swinger.setSystemLookNFeel();
         Swinger.setResourcePath("/me/temez/phoenixcraft/resources");
         Launcher.beforeStart();
-        LoginFrame instance = Launcher.start();
-        instance.setVisible(true);
+        LoginFrame LoginFrame = Launcher.start();
+        LoginFrame.setVisible(true);
     }
 
 }

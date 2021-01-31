@@ -1,10 +1,15 @@
 package me.temez.phoenixcraft.utils;
 
+import fr.theshark34.swinger.Swinger;
 import me.temez.phoenixcraft.Settings;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 public class BaseUtils {
+    public static Font font;
+
 
     public static int getPlatform() {
         String osName = System.getProperty("os.name").toLowerCase();
@@ -34,6 +39,27 @@ public class BaseUtils {
             fiDir.mkdir();
         }
         return fiDir;
+    }
+
+    public static Font getFont(float size, int type){
+        try {
+            switch (type) {
+                case 1:
+                    font = Font.createFont(0, BaseUtils.class.getResourceAsStream("/me/temez/phoenixcraft/resources/fonts/Font1.ttf")).deriveFont(size);
+                    break;
+                case 2:
+                    font = Font.createFont(0, BaseUtils.class.getResourceAsStream(Swinger.getResourcePath() + "fonts/Font2.ttf")).deriveFont(size); // 28691096
+                    break;
+                case 3:
+                    font = Font.createFont(0, BaseUtils.class.getResourceAsStream(Swinger.getResourcePath() + "fonts/Font3.ttf")).deriveFont(size);
+                    break;
+                default:
+                    font = new Font("Arial", 0, (int) (size));
+            }
+        } catch (FontFormatException | IOException e) {
+            font = new Font("Arial", 0, (int) (size));
+        }
+        return font;
     }
 
 }

@@ -2,6 +2,7 @@ package me.temez.phoenixcraft.components;
 
 import fr.theshark34.swinger.Swinger;
 import me.temez.phoenixcraft.Settings;
+import me.temez.phoenixcraft.utils.BaseUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,10 +29,11 @@ public class PassField extends JPasswordField {
         setSelectedTextColor(Color.WHITE);
         setHorizontalAlignment(LEFT);
         setText(Settings.DPasswordText);
-//       setFont(StyleUtils.getFont(14, 1));
+        setFont(BaseUtils.getFont(15, 2));
         setBounds(x, y, width, height);
 
-        this.width = width - 26;
+
+        this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;

@@ -2,6 +2,7 @@ package me.temez.phoenixcraft.components;
 
 import fr.theshark34.swinger.Swinger;
 import me.temez.phoenixcraft.Settings;
+import me.temez.phoenixcraft.utils.BaseUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,13 +23,15 @@ public class LoginField extends JTextField {
         setOpaque(false);
         setBorder(null);
         setCaretColor(staticColor);
+
+        setHorizontalAlignment(JLabel.CENTER);
         setSelectionColor(new Color(51, 153, 255));
         setSelectedTextColor(Color.WHITE);
         setHorizontalAlignment(LEFT);
-//      setFont(StyleUtils.getFont(14, 1));
+        setFont(BaseUtils.getFont(26, 1));
         setBounds(x, y, width, height);
         setText(Settings.DLoginText);
-        this.width = width - 26;
+        this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
