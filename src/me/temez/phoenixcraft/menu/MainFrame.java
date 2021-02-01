@@ -7,17 +7,18 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
 
-    public static MainFrame instance;
-    public LauncherPanel launcherPanel;
+    public static MainFrame mainFrame;
+    private final MainPanel mainPanel;
 
     public MainFrame() {
         super("PhoenixCraft");
+        mainFrame = this;
         this.setUndecorated(true);
-        this.setSize(940, 600);
+        this.setSize(450, 650);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBackground(Swinger.TRANSPARENT);
         this.setIconImage(Swinger.getResource("ico.png"));
-        this.setContentPane(launcherPanel = new LauncherPanel());
+        this.setContentPane(mainPanel = new MainPanel());
         WindowMover mover = new WindowMover(this);
         addMouseListener(mover);
         addMouseMotionListener(mover);
@@ -25,10 +26,10 @@ public class MainFrame extends JFrame {
     }
 
     public static MainFrame getInstance() {
-        return instance;
+        return mainFrame;
     }
 
-    public LauncherPanel getLauncherPanel() {
-        return launcherPanel;
+    public MainPanel getLauncherPanel() {
+        return mainPanel;
     }
 }

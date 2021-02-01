@@ -8,7 +8,7 @@ import javax.swing.*;
 public class LoginFrame extends JFrame {
 
     private static LoginFrame LoginFrame;
-    private final LoginPanel LoginPanel;
+    private final me.temez.phoenixcraft.login.LoginPanel LoginPanel;
 
     public LoginFrame() {
 

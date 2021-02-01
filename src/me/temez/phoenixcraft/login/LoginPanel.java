@@ -12,18 +12,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginPanel extends JPanel implements SwingerEventListener {
-    private LoginFrame loginFrame = LoginFrame.getInstance();
+    private final LoginFrame loginFrame = LoginFrame.getInstance();
 
     Image back = Swinger.getResource("login_assets/back.png");
 
-    private STexturedButton close = new STexturedButton(Swinger.getResource("login_assets/close.png"), Swinger.getResource("login_assets/close.png"));
-    private STexturedButton minimize = new STexturedButton(Swinger.getResource("login_assets/minimize.png"), Swinger.getResource("login_assets/minimize.png"));
-    private STexturedButton login = new STexturedButton(Swinger.getResource("login_assets/login.png"), Swinger.getResource("login_assets/login_overlay.png"));
+    private final STexturedButton close = new STexturedButton(Swinger.getResource("login_assets/close.png"), Swinger.getResource("login_assets/close.png"));
+    private final STexturedButton minimize = new STexturedButton(Swinger.getResource("login_assets/minimize.png"), Swinger.getResource("login_assets/minimize.png"));
+    private final STexturedButton login = new STexturedButton(Swinger.getResource("login_assets/login.png"), Swinger.getResource("login_assets/login_overlay.png"));
 
     public static LoginField loginField = new LoginField(89, 259, 281, 66, null, null);
     public static PassField passField = new PassField(89, 335, 281, 66, null, null);
 
-    private CheckBox logged = new CheckBox(90, 550, 28, 28, "", true);
+    private final CheckBox logged = new CheckBox(90, 550, 28, 28, "", true);
 
     public LoginPanel() {
         setLayout(null);
@@ -34,7 +34,7 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
         login.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         minimize.addEventListener(this);
-        minimize.setBounds(377, 9 ,29, 29);
+        minimize.setBounds(377, 9, 29, 29);
         minimize.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         close.addEventListener(this);
