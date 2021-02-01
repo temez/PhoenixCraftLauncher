@@ -18,10 +18,10 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
 
     private STexturedButton close = new STexturedButton(Swinger.getResource("login_assets/close.png"), Swinger.getResource("login_assets/close.png"));
     private STexturedButton minimize = new STexturedButton(Swinger.getResource("login_assets/minimize.png"), Swinger.getResource("login_assets/minimize.png"));
-    private STexturedButton login = new STexturedButton(Swinger.getResource("login_assets/login.png"), Swinger.getResource("login_assets/login_over.png"));
+    private STexturedButton login = new STexturedButton(Swinger.getResource("login_assets/login.png"), Swinger.getResource("login_assets/login_overlay.png"));
 
-    private LoginField loginField = new LoginField(89, 259, 281, 66, null, null);
-    private PassField passField = new PassField(89, 335, 281, 66, null, null);
+    public static LoginField loginField = new LoginField(89, 259, 281, 66, null, null);
+    public static PassField passField = new PassField(89, 335, 281, 66, null, null);
 
     private CheckBox logged = new CheckBox(90, 550, 28, 28, "", true);
 
@@ -34,11 +34,11 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
         login.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         minimize.addEventListener(this);
-        minimize.setBounds(377, 9);
+        minimize.setBounds(377, 9 ,29, 29);
         minimize.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         close.addEventListener(this);
-        close.setBounds(412, 9);
+        close.setBounds(412, 9, 29, 29);
         close.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         loginField.setHorizontalAlignment(JTextField.CENTER);
@@ -60,9 +60,7 @@ public class LoginPanel extends JPanel implements SwingerEventListener {
         } else if (event.getSource() == close) {
             loginFrame.dispose();
         } else if (event.getSource() == login) {
-            System.out.println(loginField.getText());
-            System.out.println(passField.getText());
-            System.out.println(logged.isSelected());
+            Login.TryLogin(loginField.getText(), passField.getText());
         }
     }
 
